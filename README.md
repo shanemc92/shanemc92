@@ -14,6 +14,8 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 
 **[ntfy-reminders](https://github.com/shanemc92/ntfy-reminders)** — self-hosted notification scheduler for [ntfy](https://ntfy.sh), with one-time and recurring reminders dispatched via cron.
 
+**[gate-remote](https://github.com/shanemc92/gate-remote)** — self-hosted flask web app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote. Daily on/off schedule, optional RSTP camera view and ntfy push notification on each toggle. 
+
 ## Server scripts
 
 **[debian-harden](https://github.com/shanemc92/debian-harden)** — interactive hardening script for Debian-based systems. Sets up a sudo user/SSH key, hardens sshd, configures UFW and fail2ban, applies optional sysctl network hardening, and sets up unattended-upgrades and automatic cleanup — all from a handful of prompts.
