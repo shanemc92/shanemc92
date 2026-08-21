@@ -48,6 +48,5 @@ If you find any bugs or have any feature suggestions, you can send them through 
 
 I'm posting everything I've built here but if you like them and want to help towards development and hosting, feel free. 
 
-```markdown
-<a href="https://buymeacoffee.com/01fsslj4kk" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
-```
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/01fsslj4kk)
+
