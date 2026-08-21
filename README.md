@@ -48,5 +48,6 @@ If you find any bugs or have any feature suggestions, you can send them through 
 
 I'm posting everything I've built here but if you like them and want to help towards development and hosting, feel free. 
 
-[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=01fsslj4kk&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/01fsslj4kk)
-
+```markdown
+<a href="https://buymeacoffee.com/01fsslj4kk" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+```
