@@ -46,7 +46,7 @@ If you find any bugs or have any feature suggestions, you can send them through 
 
 
 
-I'm posting everything I've built here but if you like them and want to help towards development and hosting, feel free. 
+I'm posting everything I've built here but if you like them and want to help towards development and hosting, you can buy me a coffee 😊
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/01fsslj4kk)
 
