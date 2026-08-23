@@ -11,6 +11,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 > Common thread across most of these: no build step, minimal dependencies, everything running from a single file where possible.
 
 <div align="center">
+
 [![Static Badge](https://img.shields.io/badge/no%20build%20step-brightgreen)](#)
 [![Static Badge](https://img.shields.io/badge/single%20file-blue)](#)
 [![Static Badge](https://img.shields.io/badge/minimal%20deps-lightgrey)](#)
