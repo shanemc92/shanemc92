@@ -26,7 +26,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 | Tool | What it does |
 |---|---|
 | 🗓️ **[TimePilot](https://github.com/shanemc92/TimePilot)** | Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users |
-| 💰 **[finance-ledger](https://github.com/shanemc92/finance-ledger)** | personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs. |
+| 💰 **[finance-ledger](https://github.com/shanemc92/finance-ledger)** | Personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs. |
 | 🔑 **[password-generator](https://github.com/shanemc92/password-generator)** | Client-side password generator with theming and secure one-time sharing via scrt.link |
 | 🛡️ **[security-assessment](https://github.com/shanemc92/security-assessment)** | Static HTML toolkit for running security maturity assessments (NIST CSF / CIS) and generating a client-ready report - no backend required |
 | 📋 **[change-manager](https://github.com/shanemc92/change-manager)** | In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results) |
