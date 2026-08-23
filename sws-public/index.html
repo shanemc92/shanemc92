@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA4VBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAgACAgEEBgIEBwIFBwIFCAIHCwMHCwQIDAQIDQQJDgQKEAULEAULEQULEgUMEgYNFAYNFQcOFQcOFgcaKQ0bKg0bKw0sRRUsRRYsRhYtRxYuSBZCaCBDaSFEayFMuhJRfidZiytZjCxajSxajixbjixbjy1ckC1dkS1eky5elC5sqTVsqjVtqjVtqzVtrDZurDZ7wDx7wTx8wj2F0EGF0UGG0kKH1EKI1UKJ10OK2EOK2ESK2USL2USL2kT/+YxzUXmmAAAACXRSTlMAAkpMTuXn6f1P3yv/AAABLElEQVRYw+2XWzPDUBRGN3pbbRrXFA2CFlWKlrpHWkLU//9BHnhoMelknzx0Rtb7WTP7O3ufi0hGOswp+V6eK6KkmBMRkQJqCiIiUtILSqkJrA8FVsqCUULa7UommFlB9G4m6Dob5yaCyIFyKzIQ1ACagb6E/iKA5+tDvNsCcG/02+jvAtgdfR8ETQCO3tSNFLXKAPuBvhM7NoD3qG/lW3dqlFNmwfcA7L5+mIIGQF0vGByaCZ72AKrqEh52ANxrbYjdJaNtjI7NGmlwYNbKX/HZp9phut82G+erPw6Ui9r4jb7eixO8rAA0JuILlyffBGuvMYJh9fehGq4mEIxObOfsZ7W9zfH19cv4EJ/D7HL914J2YlIVYFmVxKT3Wjf+cMznS0ryC9l/czb4BAFPZNykdu22AAAAAElFTkSuQmCC">
+<title>tools — zsh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --page: #090b10;
+    --win: #12151c;
+    --win-border: #262b38;
+    --titlebar: #181c26;
+    --text: #d9dde6;
+    --dim: #6b7385;
+    --accent: #5eead4;
+    --accent-dim: #2b6b63;
+    --glow-a: #5eead4;
+    --glow-b: #7c9cff;
+  }
+
+  @property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  @keyframes spin {
+    to { --a: 360deg; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(94,234,212,0.08), transparent),
+      var(--page);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 4vh 4vw;
+  }
+
+  .window-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    max-height: 85dvh;
+    border-radius: 14px;
+    padding: 2px;
+    background: conic-gradient(from var(--a), var(--glow-a), var(--glow-b), var(--glow-a));
+    animation: spin 2s linear infinite;
+  }
+
+  .window-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    z-index: -1;
+    border-radius: 14px;
+    background: inherit;
+    filter: blur(8px);
+    opacity: 0.25;
+    animation: spin 2s linear infinite;
+  }
+
+  .window {
+    width: 100%;
+    height: 100%;
+    max-height: calc(85dvh - 4px);
+    display: flex;
+    flex-direction: column;
+    background: var(--win);
+    border-radius: 12.5px;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .window-wrap, .window-wrap::before { animation: none; }
+  }
+
+  .titlebar {
+    flex: 0 0 auto;
+    background: var(--titlebar);
+    border-bottom: 1px solid var(--win-border);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .dots { display: flex; gap: 0.45rem; }
+  .dots span {
+    width: 11px; height: 11px; border-radius: 50%;
+  }
+  .dot-red { background: #ff5f57; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #28c840; }
+
+  .titlebar-label {
+    flex: 1;
+    text-align: center;
+    color: var(--dim);
+    font-size: 12.5px;
+    margin-right: 3rem;
+  }
+
+  .term {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.75rem 1.75rem 2rem;
+    line-height: 1.75;
+  }
+
+  .prompt { color: var(--accent); }
+  .cmd { color: var(--text); }
+  .comment { color: var(--dim); margin: 0.9rem 0 1.5rem; }
+
+  .cmd-link {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--dim);
+  }
+  .cmd-link:hover,
+  .cmd-link:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  ul.listing {
+    list-style: none;
+    border-top: 1px solid var(--win-border);
+  }
+
+  ul.listing li { border-bottom: 1px solid var(--win-border); }
+
+  ul.listing a {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    align-items: baseline;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.8rem 0.4rem;
+    border-radius: 6px;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+
+  ul.listing a:hover,
+  ul.listing a:focus-visible {
+    background: rgba(94,234,212,0.06);
+    color: var(--accent);
+    outline: none;
+  }
+
+  .perm { color: var(--dim); width: 11ch; flex-shrink: 0; }
+  .name { color: var(--text); width: 20ch; flex-shrink: 0; }
+  ul.listing a:hover .name,
+  ul.listing a:focus-visible .name { color: var(--accent); }
+  .desc { color: var(--dim); font-size: 0.9em; }
+
+  .prompt-line { margin-top: 2rem; }
+
+  .cursor {
+    display: inline-block;
+    width: 7px;
+    height: 1em;
+    background: var(--accent);
+    vertical-align: text-bottom;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor { animation: none; }
+  }
+
+  @media (max-width: 560px) {
+    .perm { display: none; }
+    .name { width: auto; }
+    ul.listing a { flex-direction: column; gap: 0.2rem; }
+
+    body {
+      padding: 0;
+      min-height: 100dvh;
+    }
+
+    .window-wrap {
+      max-width: none;
+      max-height: none;
+      width: 100vw;
+      height: 100dvh;
+      border-radius: 0;
+    }
+
+    .window-wrap::before { display: none; }
+
+    .window {
+      max-height: none;
+      border-radius: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="window-wrap">
+<div class="window">
+  <div class="titlebar">
+    <div class="dots">
+      <span class="dot-red"></span>
+      <span class="dot-yellow"></span>
+      <span class="dot-green"></span>
+    </div>
+    <div class="titlebar-label">tools — zsh</div>
+  </div>
+
+  <div class="term">
+    <div id="view-tools">
+      <div><span class="prompt">~/tools</span> <span class="cmd">❯ ls</span></div>
+      <p class="comment"># handy tools, all free, poke around</p>
+
+      <ul class="listing">
+        <li>
+          <a href="https://timepilot-demo.gltch.pro/login">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">timepilot-demo/</span>
+            <span class="desc">demo of timepilot calendar, kanban, time tracking</span>
+          </a>
+        </li>
+        <li>
+          <a href="./finance-ledger/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">finance-ledger/</span>
+            <span class="desc">personal household finance workbook</span>
+          </a>
+        </li>
+        <li>
+          <a href="./password-generator/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">password-generator/</span>
+            <span class="desc">strong random passwords, configurable rules</span>
+          </a>
+        </li>
+        <li>
+          <a href="./security-assessment/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">security-assessment/</span>
+            <span class="desc">security framework maturity auditing</span>
+          </a>
+        </li>
+        <li>
+          <a href="./change-manager/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">change-manager/</span>
+            <span class="desc">create and template change requests</span>
+          </a>
+        </li>
+        <li>
+          <a href="./cert-tool/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">cert-tool/</span>
+            <span class="desc">certificate tooling gui</span>
+          </a>
+        </li>
+        <li>
+          <a href="./scrub-adub/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">scrub-adub/</span>
+            <span class="desc">reversible pii redaction</span>
+          </a>
+        </li>
+        <li>
+          <a href="./budget-tracker/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">budget-tracker/</span>
+            <span class="desc">simple budget tracker for projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="./ntfy-reminders/standalone/ntfy-client-demo.html">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">ntfy-reminders/</span>
+            <span class="desc">demo of custom notification scheduler for ntfy</span>
+          </a>
+        </li>
+        <li>
+          <a href="./markdown-portal/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">markdown-portal/</span>
+            <span class="desc">read .md files in browser with custom theming</span>
+          </a>
+        </li>
+        <li>
+          <a href="./mcq-portal/">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">mcq-portal/</span>
+            <span class="desc">offline MCQ flashcard player for exam prep</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/shanemc92">
+            <span class="perm">lrwxrwxrwx</span>
+            <span class="name">github</span>
+            <span class="desc">more projects and code</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="prompt-line">
+        <span class="prompt">~/tools</span> <span class="cmd">❯</span>
+        <a href="#" class="cmd-link" data-show="games">ls -l games</a>
+        <span class="cursor"></span>
+      </div>
+    </div>
+
+    <div id="view-games" hidden>
+      <div><span class="prompt">~/tools</span> <span class="cmd">❯ ls -l games</span></div>
+      <p class="comment"># games, very nerdy, mostly fun</p>
+
+      <ul class="listing">
+        <li>
+          <a href="/thirteen-clauses-web">
+            <span class="perm">drwxr-xr-x</span>
+            <span class="name">thirteen-clauses/</span>
+            <span class="desc">text based rpg game about TOS arbritation</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/shanemc92">
+            <span class="perm">lrwxrwxrwx</span>
+            <span class="name">github</span>
+            <span class="desc">more projects and code</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="prompt-line">
+        <span class="prompt">~/tools</span> <span class="cmd">❯</span>
+        <a href="#" class="cmd-link" data-show="tools">ls -l tools</a>
+        <span class="cursor"></span>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.cmd-link').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var show = this.dataset.show;
+      document.getElementById('view-tools').hidden = show !== 'tools';
+      document.getElementById('view-games').hidden = show !== 'games';
+    });
+  });
+</script>
+</body>
+</html>
