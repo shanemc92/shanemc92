@@ -1,0 +1,10 @@
+services:
+  app:
+    image: joseluisq/static-web-server:2-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./public:/public:ro
+    environment:
+      - SERVER_ROOT=/public
