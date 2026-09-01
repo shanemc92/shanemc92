@@ -49,7 +49,9 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 
 ## 🎮 Games
 
-**[thirteen-clauses](https://github.com/shanemc92/thirteen-clauses)**  A text dungeon crawler about binding arbitration. You have a dispute. The other party has a dungeon. Thirteen floors of it, and a clause for every one. Fight your way down, or read the small print carefully enough to find another way out. Plays in a terminal or in a browser. No install, no account, no server - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab.
+**[thirteen-clauses](https://github.com/shanemc92/thirteen-clauses)**  A text-based dungeon crawler about binding arbitration. You have a dispute. The other party has a dungeon. Thirteen floors of it, and a clause for every one. Fight your way down, or read the small print carefully enough to find another way out. Plays in a terminal or in a browser. No install, no account, no server - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab.
+
+**[ninefold-ctf](https://github.com/shanemc92/ninefold-ctf)**  Nine compartments stand between you and the flag. Each one is a different physical trick — nothing is explained up front, and nothing about how a compartment works is visible in the page source until you've actually opened it. 
 
 ## 🕰️ Older work
 
