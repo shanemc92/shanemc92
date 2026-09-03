@@ -16,7 +16,6 @@
     --text: #d9dde6;
     --dim: #6b7385;
     --accent: #5eead4;
-    --accent-dim: #2b6b63;
     --glow-a: #5eead4;
     --glow-b: #7c9cff;
   }
@@ -27,12 +26,10 @@
     initial-value: 0deg;
   }
 
-  @keyframes spin {
-    to { --a: 360deg; }
-  }
+  @keyframes spin { to { --a: 360deg; } }
+  @keyframes blink { 50% { opacity: 0; } }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html, body { height: 100%; }
 
   body {
@@ -84,23 +81,20 @@
     overflow: hidden;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .window-wrap, .window-wrap::before { animation: none; }
-  }
-
   .titlebar {
     flex: 0 0 auto;
     background: var(--titlebar);
-    border-bottom: 1px solid var(--win-border);
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 1rem 0;
+  }
+
+  .titlebar-top {
     display: flex;
     align-items: center;
+    padding-bottom: 0.7rem;
   }
 
   .dots { display: flex; gap: 0.45rem; }
-  .dots span {
-    width: 11px; height: 11px; border-radius: 50%;
-  }
+  .dots span { width: 11px; height: 11px; border-radius: 50%; }
   .dot-red { background: #ff5f57; }
   .dot-yellow { background: #ffbd2e; }
   .dot-green { background: #28c840; }
@@ -111,6 +105,66 @@
     color: var(--dim);
     font-size: 12.5px;
     margin-right: 3rem;
+    text-decoration: none;
+    transition: color 0.12s ease, text-shadow 0.12s ease;
+  }
+
+  .titlebar-label:hover,
+  .titlebar-label:focus-visible {
+    color: var(--accent);
+    text-shadow: 0 0 12px rgba(94,234,212,0.45);
+    outline: none;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-bottom: 1px solid var(--win-border);
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    position: relative;
+    flex: 0 0 auto;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--dim);
+    font: inherit;
+    font-size: 13px;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: color 0.12s ease, background 0.12s ease;
+  }
+
+  .tab::before {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--glow-a), var(--glow-b));
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0.3);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  .tab:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+  .tab:focus-visible { outline: 1px solid var(--accent); outline-offset: -3px; }
+
+  .tab[aria-selected="true"] {
+    color: var(--accent);
+    background: var(--win);
+  }
+  .tab[aria-selected="true"]::before {
+    opacity: 1;
+    transform: scaleX(1);
+    box-shadow: 0 0 10px rgba(94,234,212,0.6);
   }
 
   .term {
@@ -126,23 +180,7 @@
   .cmd { color: var(--text); }
   .comment { color: var(--dim); margin: 0.9rem 0 1.5rem; }
 
-  .cmd-link {
-    color: var(--text);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--dim);
-  }
-  .cmd-link:hover,
-  .cmd-link:focus-visible {
-    color: var(--accent);
-    border-color: var(--accent);
-    outline: none;
-  }
-
-  ul.listing {
-    list-style: none;
-    border-top: 1px solid var(--win-border);
-  }
-
+  ul.listing { list-style: none; border-top: 1px solid var(--win-border); }
   ul.listing li { border-bottom: 1px solid var(--win-border); }
 
   ul.listing a {
@@ -181,21 +219,19 @@
     animation: blink 1s steps(1) infinite;
   }
 
-  @keyframes blink { 50% { opacity: 0; } }
-
   @media (prefers-reduced-motion: reduce) {
-    .cursor { animation: none; }
+    .window-wrap, .window-wrap::before, .cursor { animation: none; }
+    .tab, .tab::before, ul.listing a { transition: none; }
   }
 
   @media (max-width: 560px) {
     .perm { display: none; }
     .name { width: auto; }
     ul.listing a { flex-direction: column; gap: 0.2rem; }
+    .titlebar-label { margin-right: 0; font-size: 11.5px; }
+    .tab { padding: 0.55rem 0.85rem; }
 
-    body {
-      padding: 0;
-      min-height: 100dvh;
-    }
+    body { padding: 0; min-height: 100dvh; }
 
     .window-wrap {
       max-width: none;
@@ -206,11 +242,8 @@
     }
 
     .window-wrap::before { display: none; }
-
-    .window {
-      max-height: none;
-      border-radius: 0;
-    }
+    .window { max-height: none; border-radius: 0; }
+    .term { padding: 1.25rem 1.1rem 2rem; }
   }
 </style>
 </head>
@@ -218,159 +251,172 @@
 <div class="window-wrap">
 <div class="window">
   <div class="titlebar">
-    <div class="dots">
-      <span class="dot-red"></span>
-      <span class="dot-yellow"></span>
-      <span class="dot-green"></span>
+    <div class="titlebar-top">
+      <div class="dots">
+        <span class="dot-red"></span>
+        <span class="dot-yellow"></span>
+        <span class="dot-green"></span>
+      </div>
+      <a class="titlebar-label" href="https://github.com/shanemc92" target="_blank" rel="noopener">github.com/shanemc92</a>
     </div>
-    <div class="titlebar-label">tools — zsh</div>
+    <div class="tabs" role="tablist" aria-label="sections">
+      <button class="tab" role="tab" id="tab-tools" aria-controls="view-tools" aria-selected="true" tabindex="0" data-tab="tools">tools</button>
+      <button class="tab" role="tab" id="tab-security" aria-controls="view-security" aria-selected="false" tabindex="-1" data-tab="security">security</button>
+      <button class="tab" role="tab" id="tab-games" aria-controls="view-games" aria-selected="false" tabindex="-1" data-tab="games">games</button>
+      <button class="tab" role="tab" id="tab-study" aria-controls="view-study" aria-selected="false" tabindex="-1" data-tab="study">study</button>
+      <button class="tab" role="tab" id="tab-finance" aria-controls="view-finance" aria-selected="false" tabindex="-1" data-tab="finance">finance</button>
+    </div>
   </div>
 
   <div class="term">
-    <div id="view-tools">
-      <div><span class="prompt">~/tools</span> <span class="cmd">❯ ls</span></div>
+    <section class="view" id="view-tools" role="tabpanel" aria-labelledby="tab-tools">
+      <div class="line"><span class="prompt">~/tools</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># handy tools, all free, poke around</p>
-
       <ul class="listing">
-        <li>
-          <a href="https://timepilot-demo.gltch.pro/login">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">timepilot-demo/</span>
-            <span class="desc">demo of timepilot calendar, kanban, time tracking</span>
-          </a>
-        </li>
-        <li>
-          <a href="./finance-ledger/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">finance-ledger/</span>
-            <span class="desc">personal household finance workbook</span>
-          </a>
-        </li>
-        <li>
-          <a href="./password-generator/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">password-generator/</span>
-            <span class="desc">strong random passwords, configurable rules</span>
-          </a>
-        </li>
-        <li>
-          <a href="./security-assessment/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">security-assessment/</span>
-            <span class="desc">security framework maturity auditing</span>
-          </a>
-        </li>
-        <li>
-          <a href="./change-manager/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">change-manager/</span>
-            <span class="desc">create and template change requests</span>
-          </a>
-        </li>
-        <li>
-          <a href="./cert-tool/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">cert-tool/</span>
-            <span class="desc">certificate tooling gui</span>
-          </a>
-        </li>
-        <li>
-          <a href="./scrub-adub/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">scrub-adub/</span>
-            <span class="desc">reversible pii redaction</span>
-          </a>
-        </li>
-        <li>
-          <a href="./budget-tracker/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">budget-tracker/</span>
-            <span class="desc">simple budget tracker for projects</span>
-          </a>
-        </li>
-        <li>
-          <a href="./ntfy-reminders/standalone/ntfy-client-demo.html">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">ntfy-reminders/</span>
-            <span class="desc">demo of custom notification scheduler for ntfy</span>
-          </a>
-        </li>
-        <li>
-          <a href="./markdown-portal/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">markdown-portal/</span>
-            <span class="desc">read .md files in browser with custom theming</span>
-          </a>
-        </li>
-        <li>
-          <a href="./mcq-portal/">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">mcq-portal/</span>
-            <span class="desc">offline MCQ flashcard player for exam prep</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/shanemc92">
-            <span class="perm">lrwxrwxrwx</span>
-            <span class="name">github</span>
-            <span class="desc">more projects and code</span>
-          </a>
-        </li>
+        <li><a href="https://timepilot-demo.gltch.pro/login" target="_blank" rel="noopener">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">timepilot-demo/</span>
+          <span class="desc">demo of timepilot calendar, kanban, time tracking</span>
+        </a></li>
+        <li><a href="./change-manager/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">change-manager/</span>
+          <span class="desc">create and template change requests</span>
+        </a></li>
+        <li><a href="./ntfy-reminders/standalone/ntfy-client-demo.html">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">ntfy-reminders/</span>
+          <span class="desc">demo of custom notification scheduler for ntfy</span>
+        </a></li>
+        <li><a href="https://github.com/shanemc92/motd-stats" target="_blank" rel="noopener">
+          <span class="perm">lrwxrwxrwx</span>
+          <span class="name">motd-stats/</span>
+          <span class="desc">ssh login banner with live server stats</span>
+        </a></li>
       </ul>
+      <div class="prompt-line"><span class="prompt">~/tools</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
+    </section>
 
-      <div class="prompt-line">
-        <span class="prompt">~/tools</span> <span class="cmd">❯</span>
-        <a href="#" class="cmd-link" data-show="games">ls -l games</a>
-        <span class="cursor"></span>
-      </div>
-    </div>
+    <section class="view" id="view-security" role="tabpanel" aria-labelledby="tab-security" hidden>
+      <div class="line"><span class="prompt">~/security</span> <span class="cmd">❯ ls -l</span></div>
+      <p class="comment"># security tooling, all runs in your browser</p>
+      <ul class="listing">
+        <li><a href="./security-assessment/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">security-assessment/</span>
+          <span class="desc">security framework maturity auditing</span>
+        </a></li>
+        <li><a href="./cert-tool/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">cert-tool/</span>
+          <span class="desc">certificate tooling gui</span>
+        </a></li>
+        <li><a href="./password-generator/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">password-generator/</span>
+          <span class="desc">strong random passwords, configurable rules</span>
+        </a></li>
+        <li><a href="./scrub-adub/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">scrub-adub/</span>
+          <span class="desc">reversible pii redaction</span>
+        </a></li>
+        <li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener">
+          <span class="perm">lrwxrwxrwx</span>
+          <span class="name">debian-harden/</span>
+          <span class="desc">interactive hardening script for debian systems</span>
+        </a></li>
+      </ul>
+      <div class="prompt-line"><span class="prompt">~/security</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
+    </section>
 
-    <div id="view-games" hidden>
-      <div><span class="prompt">~/tools</span> <span class="cmd">❯ ls -l games</span></div>
+    <section class="view" id="view-games" role="tabpanel" aria-labelledby="tab-games" hidden>
+      <div class="line"><span class="prompt">~/games</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># games, very nerdy, mostly fun</p>
-
       <ul class="listing">
-        <li>
-          <a href="./thirteen-clauses">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">thirteen-clauses/</span>
-            <span class="desc">text based rpg game about TOS arbritation</span>
-          </a>
-        </li>
-        <li>
-          <a href="./ninefold-ctf">
-            <span class="perm">drwxr-xr-x</span>
-            <span class="name">ninefold-ctf/</span>
-            <span class="desc">nine compartments stand between you and the flag</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/shanemc92">
-            <span class="perm">lrwxrwxrwx</span>
-            <span class="name">github</span>
-            <span class="desc">more projects and code</span>
-          </a>
-        </li>
+        <li><a href="./thirteen-clauses">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">thirteen-clauses/</span>
+          <span class="desc">text based rpg game about TOS arbitration</span>
+        </a></li>
+        <li><a href="./ninefold-ctf">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">ninefold-ctf/</span>
+          <span class="desc">nine compartments stand between you and the flag</span>
+        </a></li>
       </ul>
+      <div class="prompt-line"><span class="prompt">~/games</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
+    </section>
 
-      <div class="prompt-line">
-        <span class="prompt">~/tools</span> <span class="cmd">❯</span>
-        <a href="#" class="cmd-link" data-show="tools">ls -l tools</a>
-        <span class="cursor"></span>
-      </div>
-    </div>
-  </div>
+    <section class="view" id="view-study" role="tabpanel" aria-labelledby="tab-study" hidden>
+      <div class="line"><span class="prompt">~/study</span> <span class="cmd">❯ ls -l</span></div>
+      <p class="comment"># exam prep, notes, revision</p>
+      <ul class="listing">
+        <li><a href="./mcq-portal/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">mcq-portal/</span>
+          <span class="desc">offline MCQ flashcard player for exam prep</span>
+        </a></li>
+        <li><a href="./markdown-portal/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">markdown-portal/</span>
+          <span class="desc">read .md files in browser with custom theming</span>
+        </a></li>
+      </ul>
+      <div class="prompt-line"><span class="prompt">~/study</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
+    </section>
+
+    <section class="view" id="view-finance" role="tabpanel" aria-labelledby="tab-finance" hidden>
+      <div class="line"><span class="prompt">~/finance</span> <span class="cmd">❯ ls -l</span></div>
+      <p class="comment"># money in, money out</p>
+      <ul class="listing">
+        <li><a href="./finance-ledger/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">finance-ledger/</span>
+          <span class="desc">personal household finance workbook</span>
+        </a></li>
+        <li><a href="./budget-tracker/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">budget-tracker/</span>
+          <span class="desc">simple budget tracker for projects</span>
+        </a></li>
+      </ul>
+      <div class="prompt-line"><span class="prompt">~/finance</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
+    </section>
   </div>
 </div>
+</div>
 <script>
-  document.querySelectorAll('.cmd-link').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      var show = this.dataset.show;
-      document.getElementById('view-tools').hidden = show !== 'tools';
-      document.getElementById('view-games').hidden = show !== 'games';
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var term = document.querySelector('.term');
+
+  function select(key, focus) {
+    tabs.forEach(function (t) {
+      var on = t.dataset.tab === key;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById('view-' + t.dataset.tab).hidden = !on;
+      if (on && focus) t.focus();
     });
+    term.scrollTop = 0;
+    if (history.replaceState) history.replaceState(null, '', '#' + key);
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { select(t.dataset.tab); });
   });
+
+  document.querySelector('.tabs').addEventListener('keydown', function (e) {
+    var i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); select(tabs[(i + 1) % tabs.length].dataset.tab, true); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); select(tabs[(i - 1 + tabs.length) % tabs.length].dataset.tab, true); }
+    if (e.key === 'Home') { e.preventDefault(); select(tabs[0].dataset.tab, true); }
+    if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1].dataset.tab, true); }
+  });
+
+  var initial = location.hash.replace('#', '');
+  if (initial && document.getElementById('view-' + initial)) select(initial);
 </script>
 </body>
 </html>
