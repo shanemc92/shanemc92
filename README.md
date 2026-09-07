@@ -32,6 +32,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 | 📋 **[change-manager](https://github.com/shanemc92/change-manager)** | In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results) |
 | 🔐 **[cert-tool](https://github.com/shanemc92/cert-tool)** | Single-file certificate/key toolkit, fully client-side, no server or dependencies |
 | 🔔 **[ntfy-reminders](https://github.com/shanemc92/ntfy-reminders)** | Self-hosted notification scheduler for [ntfy](https://ntfy.sh), with one-time and recurring reminders dispatched via cron |
+| 🖼️ **[steg-lab](https://github.com/shanemc92/steg-lab)** | Tool to hide a message in the pixels of a PNG image. You can share the image and the recipient can use the decode tab to pull the message back out. |
 | 🧽 **[scrub-adub](https://github.com/shanemc92/scrub-adub)** | Reversible PII redaction that runs entirely client-side - strip PII/secrets before pasting into an LLM, then decode the response back to real values |
 | 📊 **[budget-tracker](https://github.com/shanemc92/budget-tracker)** | Budget tracker for projects - plan what each line item should cost, log what it actually cost, see how far ahead or behind you are |
 | ⛩️ **[gate-remote](https://github.com/shanemc92/gate-remote)** | Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle |
