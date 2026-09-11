@@ -265,6 +265,7 @@
       <button class="tab" role="tab" id="tab-games" aria-controls="view-games" aria-selected="false" tabindex="-1" data-tab="games">games</button>
       <button class="tab" role="tab" id="tab-study" aria-controls="view-study" aria-selected="false" tabindex="-1" data-tab="study">study</button>
       <button class="tab" role="tab" id="tab-finance" aria-controls="view-finance" aria-selected="false" tabindex="-1" data-tab="finance">finance</button>
+      <button class="tab" role="tab" id="tab-scripts" aria-controls="view-scripts" aria-selected="false" tabindex="-1" data-tab="scripts">scripts</button>
     </div>
   </div>
 
@@ -288,16 +289,11 @@
           <span class="name">ntfy-reminders/</span>
           <span class="desc">demo of custom notification scheduler for ntfy</span>
         </a></li>
-        <li><a href="https://github.com/shanemc92/motd-stats" target="_blank" rel="noopener">
-          <span class="perm">lrwxrwxrwx</span>
-          <span class="name">motd-stats/</span>
-          <span class="desc">ssh login banner with live server stats</span>
-        </a></li>
-		<li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener">
-          <span class="perm">lrwxrwxrwx</span>
-          <span class="name">debian-harden/</span>
-          <span class="desc">interactive hardening script for debian systems</span>
-        </a></li>
+        <li><a href="./cyber-barista/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">cyber-barista/</span>
+          <span class="desc">text encoding/decoding tool, build and save recipes</span>
+        </a></li>  
       </ul>
       <div class="prompt-line"><span class="prompt">~/tools</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
     </section>
@@ -306,6 +302,11 @@
       <div class="line"><span class="prompt">~/security</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># security tooling, all runs in your browser</p>
       <ul class="listing">
+        <li><a href="./password-generator/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">password-generator/</span>
+          <span class="desc">strong random passwords, configurable rules</span>
+        </a></li>
         <li><a href="./security-assessment/">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">security-assessment/</span>
@@ -316,17 +317,12 @@
           <span class="name">cert-tool/</span>
           <span class="desc">certificate tooling gui</span>
         </a></li>
-        <li><a href="./password-generator/">
-          <span class="perm">drwxr-xr-x</span>
-          <span class="name">password-generator/</span>
-          <span class="desc">strong random passwords, configurable rules</span>
-        </a></li>
         <li><a href="./scrub-adub/">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">scrub-adub/</span>
           <span class="desc">reversible pii redaction</span>
         </a></li>
-		<li><a href="./steg-lab/">
+		    <li><a href="./steg-lab/">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">steg-lab/</span>
           <span class="desc">encode/decode secrets in png images</span>
@@ -348,6 +344,11 @@
           <span class="perm">drwxr-xr-x</span>
           <span class="name">ninefold-ctf/</span>
           <span class="desc">nine compartments stand between you and the flag</span>
+        </a></li>
+        <li><a href="./break-glass">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">break-glass/</span>
+          <span class="desc">cyber incident response tabletop simulator</span>
         </a></li>
       </ul>
       <div class="prompt-line"><span class="prompt">~/games</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
@@ -387,6 +388,29 @@
         </a></li>
       </ul>
       <div class="prompt-line"><span class="prompt">~/finance</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
+    </section>
+
+    <section class="view" id="view-scripts" role="tabpanel" aria-labelledby="tab-scripts" hidden>
+      <div class="line"><span class="prompt">~/scripts</span> <span class="cmd">❯ ls -l</span></div>
+      <p class="comment"># no click-ops here</p>
+      <ul class="listing">
+        <li><a href="https://github.com/shanemc92/motd-stats" target="_blank" rel="noopener">
+          <span class="perm">lrwxrwxrwx</span>
+          <span class="name">motd-stats/</span>
+          <span class="desc">ssh login banner with live server stats</span>
+        </a></li>
+		    <li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener">
+          <span class="perm">lrwxrwxrwx</span>
+          <span class="name">debian-harden/</span>
+          <span class="desc">interactive hardening script for debian systems</span>
+        </a></li>
+        <li><a href="https://github.com/shanemc92/powershell-automate" target="_blank" rel="noopener">
+          <span class="perm">lrwxrwxrwx</span>
+          <span class="name">powershell-automate/</span>
+          <span class="desc">windows script scheduler platform with shared function library</span>
+        </a></li>
+      </ul>
+      <div class="prompt-line"><span class="prompt">~/scripts</span> <span class="cmd">❯</span> <span class="cursor"></span></div>
     </section>
   </div>
 </div>

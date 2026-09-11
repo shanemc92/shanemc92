@@ -21,21 +21,47 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 
 ---
 
-## 🧰 Tools I've built
+## 🧰 Tools
 
 | Tool | What it does |
 |---|---|
 | 🗓️ **[TimePilot](https://github.com/shanemc92/TimePilot)** | Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users |
-| 💰 **[finance-ledger](https://github.com/shanemc92/finance-ledger)** | Personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs. |
+| 📋 **[change-manager](https://github.com/shanemc92/change-manager)** | In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results) |
+| 🔔 **[ntfy-reminders](https://github.com/shanemc92/ntfy-reminders)** | Self-hosted notification scheduler for [ntfy](https://ntfy.sh), with one-time and recurring reminders dispatched via cron |
+| ☕ **[cyber-barista](https://github.com/shanemc92/cyber-barista)** | Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions |
+| ⛩️ **[gate-remote](https://github.com/shanemc92/gate-remote)** | Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle |
+
+## 🛡️ Security
+
+| Tool | What it does |
+|---|---|
 | 🔑 **[password-generator](https://github.com/shanemc92/password-generator)** | Client-side password generator with theming and secure one-time sharing via scrt.link |
 | 🛡️ **[security-assessment](https://github.com/shanemc92/security-assessment)** | Static HTML toolkit for running security maturity assessments (NIST CSF / CIS) and generating a client-ready report - no backend required |
-| 📋 **[change-manager](https://github.com/shanemc92/change-manager)** | In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results) |
 | 🔐 **[cert-tool](https://github.com/shanemc92/cert-tool)** | Single-file certificate/key toolkit, fully client-side, no server or dependencies |
-| 🔔 **[ntfy-reminders](https://github.com/shanemc92/ntfy-reminders)** | Self-hosted notification scheduler for [ntfy](https://ntfy.sh), with one-time and recurring reminders dispatched via cron |
-| 🖼️ **[steg-lab](https://github.com/shanemc92/steg-lab)** | Tool to hide a message in the pixels of a PNG image. You can share the image and the recipient can use the decode tab to pull the message back out. |
 | 🧽 **[scrub-adub](https://github.com/shanemc92/scrub-adub)** | Reversible PII redaction that runs entirely client-side - strip PII/secrets before pasting into an LLM, then decode the response back to real values |
+| 🖼️ **[steg-lab](https://github.com/shanemc92/steg-lab)** | Tool to hide a message in the pixels of a PNG image. You can share the image and the recipient can use the decode tab to pull the message back out. |
+
+## 🎮 Games
+
+| Game | What it does |
+|---|---|
+| ⚖️ **[thirteen-clauses](https://github.com/shanemc92/thirteen-clauses)** | A text-based dungeon crawler about binding arbitration. Thirteen floors, a clause for every one. Plays in a terminal or in a browser - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab. |
+| 🚩 **[ninefold-ctf](https://github.com/shanemc92/ninefold-ctf)** | Nine compartments stand between you and the flag. Each one is a different physical trick - nothing is explained up front, and nothing about how a compartment works is visible in the page source until you've opened it. |
+| 🚨 **[break-glass](https://github.com/shanemc92/break-glass)** | A cyber incident response tabletop simulator. You're the lead responder - choose the right actions to resolve the incident while minimising damage. |
+
+## 📚 Study tooling
+
+| Tool | What it does |
+|---|---|
+| 🗂️ **[mcq-portal](https://github.com/shanemc92/mcq-portal)** | Offline MCQ flashcard player for exam prep |
+| 📖 **[markdown-portal](https://github.com/shanemc92/markdown-portal)** | Single-file Markdown viewer with custom theming, so revision notes stay usable offline |
+
+## 💰 Finance
+
+| Tool | What it does |
+|---|---|
+| 💰 **[finance-ledger](https://github.com/shanemc92/finance-ledger)** | Personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs. |
 | 📊 **[budget-tracker](https://github.com/shanemc92/budget-tracker)** | Budget tracker for projects - plan what each line item should cost, log what it actually cost, see how far ahead or behind you are |
-| ⛩️ **[gate-remote](https://github.com/shanemc92/gate-remote)** | Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle |
 
 ## 🖥️ Server scripts
 
@@ -43,16 +69,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 |---|---|
 | 🔒 **[debian-harden](https://github.com/shanemc92/debian-harden)** | Interactive hardening script for Debian-based systems - sudo user/SSH key setup, sshd hardening, UFW + fail2ban, optional sysctl network hardening, unattended-upgrades and automatic clean-up, all from a handful of prompts |
 | 📈 **[motd-stats](https://github.com/shanemc92/motd-stats)** | Login banner showing server stats at a glance: failed systemd units, reboot-required flag, fail2ban bans, last apt update, swap usage |
-
-## 📚 Study tooling
-
-**[mcq-portal](https://github.com/shanemc92/mcq-portal)** and **[markdown-portal](https://github.com/shanemc92/markdown-portal)** grew out of wanting a better way to study my own notes while working toward various certifications - an offline flashcard player and a single-file Markdown viewer, so revision material stays usable without a network connection or a bloated app.
-
-## 🎮 Games
-
-**[thirteen-clauses](https://github.com/shanemc92/thirteen-clauses)**  A text-based dungeon crawler about binding arbitration. You have a dispute. The other party has a dungeon. Thirteen floors of it, and a clause for every one. Fight your way down, or read the small print carefully enough to find another way out. Plays in a terminal or in a browser. No install, no account, no server - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab.
-
-**[ninefold-ctf](https://github.com/shanemc92/ninefold-ctf)**  Nine compartments stand between you and the flag. Each one is a different physical trick — nothing is explained up front, and nothing about how a compartment works is visible in the page source until you've actually opened it. 
+| 🪟 **[powershell-automate](https://github.com/shanemc92/powershell-automate)** | Windows script scheduler platform with a central shared function library - email notifications, full transcript logging, log rotation, daily health check emails, script integrity monitoring, task scheduler management, and centralised credential management for AD and EntraID cert scripts |
 
 ## 🕰️ Older work
 
