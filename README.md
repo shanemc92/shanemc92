@@ -53,8 +53,8 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 
 | Tool | What it does |
 |---|---|
-| 🗂️ **[mcq-portal](https://github.com/shanemc92/mcq-portal)** | Offline MCQ flashcard player for exam prep |
-| 📖 **[markdown-portal](https://github.com/shanemc92/markdown-portal)** | Single-file Markdown viewer with custom theming, so revision notes stay usable offline |
+| 🗂️ **[mcq-portal](https://github.com/shanemc92/mcq-portal)** | Offline MCQ flashcard player for exam prep - load your own question banks in JSON, shuffle questions and answer order, track scores per attempt, flag weak topics for review, and revise without needing a network connection or an app store |
+| 📖 **[markdown-portal](https://github.com/shanemc92/markdown-portal)** | Single-file Markdown viewer with custom theming, collapsible sidebar navigation, full-text search across all loaded notes, syntax-highlighted code blocks and table rendering, so revision notes and study guides stay usable and readable fully offline |
 
 ## 💰 Finance
 
