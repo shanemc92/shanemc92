@@ -26,9 +26,11 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 | Tool | What it does |
 |---|---|
 | 🗓️ **[TimePilot](https://github.com/shanemc92/TimePilot)** | Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users |
+| 🔃 [**flow-state**](https://github.com/shanemc92/flow-state) | Build a process as a flowchart, get a runbook out of it, then follow it step by step when it matters. Plus a plain incident timeline for the days nothing goes to plan |
 | 📋 **[change-manager](https://github.com/shanemc92/change-manager)** | In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results) |
 | 🔔 **[ntfy-reminders](https://github.com/shanemc92/ntfy-reminders)** | Self-hosted notification scheduler for [ntfy](https://ntfy.sh), with one-time and recurring reminders dispatched via cron |
 | ☕ **[cyber-barista](https://github.com/shanemc92/cyber-barista)** | Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions |
+| 🗃️ [**data-wrangler**](https://github.com/shanemc92/data-wrangler) | Paste or drop CSV, TSV, any delimiter, fixed width columns, JSON or JSON lines, Markdown tables or key=value log lines, run them through a list of steps, and export |
 | ⛩️ **[gate-remote](https://github.com/shanemc92/gate-remote)** | Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle |
 
 ## 🛡️ Security
