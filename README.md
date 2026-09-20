@@ -38,6 +38,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 | Tool | What it does |
 |---|---|
 | 🔑 **[password-generator](https://github.com/shanemc92/password-generator)** | Client-side password generator with theming and secure one-time sharing via scrt.link |
+| 🗝️ **[back-stop](https://github.com/shanemc92/back-stop)** | Single-file browser vault for account recovery codes - AES-256-GCM under a PBKDF2 passphrase, exports an encrypted file, and prints a plain code sheet, an encrypted QR backup and a break-glass key card. Offline Python recovery script included |
 | 🛡️ **[security-assessment](https://github.com/shanemc92/security-assessment)** | Static HTML toolkit for running security maturity assessments (NIST CSF / CIS) and generating a client-ready report - no backend required |
 | 🔐 **[cert-tool](https://github.com/shanemc92/cert-tool)** | Single-file certificate/key toolkit, fully client-side, no server or dependencies |
 | 🧽 **[scrub-adub](https://github.com/shanemc92/scrub-adub)** | Reversible PII redaction that runs entirely client-side - strip PII/secrets before pasting into an LLM, then decode the response back to real values |

@@ -172,13 +172,13 @@
     min-height: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 1.75rem 1.75rem 2rem;
-    line-height: 1.75;
+    padding: 1.3rem 1.75rem 1.4rem;
+    line-height: 1.65;
   }
 
   .prompt { color: var(--accent); }
   .cmd { color: var(--text); }
-  .comment { color: var(--dim); margin: 0.9rem 0 1.5rem; }
+  .comment { color: var(--dim); margin: 0.65rem 0 1rem; }
 
   ul.listing { list-style: none; border-top: 1px solid var(--win-border); }
   ul.listing li { border-bottom: 1px solid var(--win-border); }
@@ -190,7 +190,7 @@
     align-items: baseline;
     text-decoration: none;
     color: inherit;
-    padding: 0.8rem 0.4rem;
+    padding: 0.5rem 0.4rem;
     border-radius: 6px;
     transition: background 0.12s ease, color 0.12s ease;
   }
@@ -208,7 +208,7 @@
   ul.listing a:focus-visible .name { color: var(--accent); }
   .desc { color: var(--dim); font-size: 0.9em; }
 
-  .prompt-line { margin-top: 2rem; }
+  .prompt-line { margin-top: 1.25rem; }
 
   .cursor {
     display: inline-block;
@@ -227,7 +227,7 @@
   @media (max-width: 560px) {
     .perm { display: none; }
     .name { width: auto; }
-    ul.listing a { flex-direction: column; gap: 0.2rem; }
+    ul.listing a { flex-direction: column; gap: 0.2rem; padding: 0.7rem 0.4rem; }
     .titlebar-label { margin-right: 0; font-size: 11.5px; }
     .tab { padding: 0.55rem 0.85rem; }
 
@@ -243,7 +243,7 @@
 
     .window-wrap::before { display: none; }
     .window { border-radius: 0; }
-    .term { padding: 1.25rem 1.1rem 2rem; }
+    .term { padding: 1.25rem 1.1rem 1.5rem; }
   }
 </style>
 </head>
@@ -317,6 +317,11 @@
           <span class="name">password-generator/</span>
           <span class="desc">strong random passwords, configurable rules</span>
         </a></li>
+        <li><a href="./back-stop/">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="name">back-stop/</span>
+          <span class="desc">encrypted vault for account recovery codes</span>
+        </a></li>
         <li><a href="./security-assessment/">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">security-assessment/</span>
@@ -332,7 +337,7 @@
           <span class="name">scrub-adub/</span>
           <span class="desc">reversible pii redaction</span>
         </a></li>
-		    <li><a href="./steg-lab/">
+        <li><a href="./steg-lab/">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">steg-lab/</span>
           <span class="desc">encode/decode secrets in png images</span>
@@ -409,7 +414,7 @@
           <span class="name">motd-stats/</span>
           <span class="desc">ssh login banner with live server stats</span>
         </a></li>
-		    <li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener">
+        <li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener">
           <span class="perm">lrwxrwxrwx</span>
           <span class="name">debian-harden/</span>
           <span class="desc">interactive hardening script for debian systems</span>
