@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Self-contained: styles and scripts are inline, the favicon is a data: URL
+     and JetBrains Mono is served from vendor/fonts/. frame-ancestors is
+     deliberately absent - browsers ignore it in a meta CSP, and nginx sends it
+     as a response header (see deploy/sws-demos-init/init-docker-compose-sws.sh). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src data: blob:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA4VBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAgACAgEEBgIEBwIFBwIFCAIHCwMHCwQIDAQIDQQJDgQKEAULEAULEQULEgUMEgYNFAYNFQcOFQcOFgcaKQ0bKg0bKw0sRRUsRRYsRhYtRxYuSBZCaCBDaSFEayFMuhJRfidZiytZjCxajSxajixbjixbjy1ckC1dkS1eky5elC5sqTVsqjVtqjVtqzVtrDZurDZ7wDx7wTx8wj2F0EGF0UGG0kKH1EKI1UKJ10OK2EOK2ESK2USL2USL2kT/+YxzUXmmAAAACXRSTlMAAkpMTuXn6f1P3yv/AAABLElEQVRYw+2XWzPDUBRGN3pbbRrXFA2CFlWKlrpHWkLU//9BHnhoMelknzx0Rtb7WTP7O3ufi0hGOswp+V6eK6KkmBMRkQJqCiIiUtILSqkJrA8FVsqCUULa7UommFlB9G4m6Dob5yaCyIFyKzIQ1ACagb6E/iKA5+tDvNsCcG/02+jvAtgdfR8ETQCO3tSNFLXKAPuBvhM7NoD3qG/lW3dqlFNmwfcA7L5+mIIGQF0vGByaCZ72AKrqEh52ANxrbYjdJaNtjI7NGmlwYNbKX/HZp9phut82G+erPw6Ui9r4jb7eixO8rAA0JuILlyffBGuvMYJh9fehGq4mEIxObOfsZ7W9zfH19cv4EJ/D7HL914J2YlIVYFmVxKT3Wjf+cMznS0ryC9l/czb4BAFPZNykdu22AAAAAElFTkSuQmCC">
 <title>tools — zsh</title>
+<link rel="stylesheet" href="vendor/fonts/fonts.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
   :root {
     --page: #090b10;
