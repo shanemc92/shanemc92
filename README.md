@@ -31,6 +31,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <tr><td>🔔 <b><a href="https://github.com/shanemc92/ntfy-reminders">ntfy&#8209;reminders</a></b></td><td>Self-hosted notification scheduler for <a href="https://ntfy.sh">ntfy</a>, with one-time and recurring reminders dispatched via cron</td></tr>
 <tr><td>☕ <b><a href="https://github.com/shanemc92/cyber-barista">cyber&#8209;barista</a></b></td><td>Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions</td></tr>
 <tr><td>🗃️ <b><a href="https://github.com/shanemc92/data-wrangler">data&#8209;wrangler</a></b></td><td>Paste or drop CSV, TSV, any delimiter, fixed width columns, JSON or JSON lines, Markdown tables or key=value log lines, run them through a list of steps, and export</td></tr>
+<tr><td>🧭 <b><a href="https://github.com/shanemc92/way-point">way&#8209;point</a></b></td><td>Single-file, client-side holiday itinerary builder - build a trip day by day, save it as JSON, load it back to edit, and export a themed, script-free HTML page or Markdown file for printing</td></tr>
 <tr><td>⛩️ <b><a href="https://github.com/shanemc92/gate-remote">gate&#8209;remote</a></b></td><td>Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle</td></tr>
 </table>
 
