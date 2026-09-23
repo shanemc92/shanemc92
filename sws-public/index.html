@@ -39,7 +39,7 @@
 
   body {
     background:
-      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(94,234,212,0.08), transparent),
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(94,234,212,0.04), transparent),
       var(--page);
     color: var(--text);
     font-family: 'JetBrains Mono', monospace;
@@ -66,12 +66,12 @@
   .window-wrap::before {
     content: "";
     position: absolute;
-    inset: -5px;
+    inset: -3px;
     z-index: -1;
     border-radius: 14px;
     background: inherit;
-    filter: blur(8px);
-    opacity: 0.25;
+    filter: blur(6px);
+    opacity: 0.1;
     animation: spin 2s linear infinite;
   }
 
@@ -128,7 +128,7 @@
   .titlebar-label:hover,
   .titlebar-label:focus-visible {
     color: var(--accent);
-    text-shadow: 0 0 12px rgba(94,234,212,0.45);
+    text-shadow: 0 0 8px rgba(94,234,212,0.2);
     outline: none;
   }
 
@@ -180,7 +180,7 @@
   .tab[aria-selected="true"]::before {
     opacity: 1;
     transform: scaleX(1);
-    box-shadow: 0 0 10px rgba(94,234,212,0.6);
+    box-shadow: 0 0 6px rgba(94,234,212,0.25);
   }
 
   .term {
@@ -260,6 +260,10 @@
 
     .window-wrap::before { display: none; }
     .window { border-radius: 0; }
+
+    /* No movement on mobile: static border, steady cursor, instant tab switches */
+    .window-wrap, .cursor { animation: none; }
+    .tab, .tab::before, .titlebar-link, .titlebar-label, ul.listing a { transition: none; }
     .term { padding: 1.25rem 1.1rem 1.5rem; }
   }
 </style>
@@ -274,7 +278,7 @@
         <span class="dot-yellow"></span>
         <span class="dot-green"></span>
       </div>
-      <a class="titlebar-label" href="https://github.com/shanemc92" target="_blank" rel="noopener">github.com/shanemc92</a>
+      <a class="titlebar-label" href="https://github.com/shanemc92" target="_blank" rel="noopener noreferrer">github.com/shanemc92</a>
       <a class="titlebar-link" href="./dashboard.html">dashboard</a>
     </div>
     <div class="tabs" role="tablist" aria-label="sections">
@@ -292,37 +296,37 @@
       <div class="line"><span class="prompt">~/tools</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># handy tools, all free, poke around</p>
       <ul class="listing">
-        <li><a href="https://timepilot-demo.gltch.pro/login" target="_blank" rel="noopener">
+        <li><a href="https://timepilot-demo.gltch.pro/login" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">timepilot-demo/</span>
           <span class="desc">demo of timepilot calendar, kanban, time tracking</span>
         </a></li>
-        <li><a href="./flow-state/">
+        <li><a href="./flow-state/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">flow-state/</span>
           <span class="desc">build combined runbooks & flowcharts and run them</span>
         </a></li>
-        <li><a href="./change-manager/">
+        <li><a href="./change-manager/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">change-manager/</span>
           <span class="desc">create and template change requests</span>
         </a></li>
-        <li><a href="./ntfy-reminders/standalone/ntfy-client-demo.html">
+        <li><a href="./ntfy-reminders/standalone/ntfy-client-demo.html" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">ntfy-reminders/</span>
           <span class="desc">demo of custom notification scheduler for ntfy</span>
         </a></li>
-        <li><a href="./cyber-barista/">
+        <li><a href="./cyber-barista/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">cyber-barista/</span>
           <span class="desc">text encode/decode tool, build and save recipes</span>
         </a></li>
-        <li><a href="./data-wrangler/">
+        <li><a href="./data-wrangler/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">data-wrangler/</span>
           <span class="desc">format and transform table and log data</span>
         </a></li>
-        <li><a href="./way-point/">
+        <li><a href="./way-point/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">way-point/</span>
           <span class="desc">holiday itinerary builder with HTML export</span>
@@ -335,32 +339,32 @@
       <div class="line"><span class="prompt">~/security</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># security tooling, all runs in your browser</p>
       <ul class="listing">
-        <li><a href="./password-generator/">
+        <li><a href="./password-generator/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">password-generator/</span>
           <span class="desc">strong random passwords, configurable rules</span>
         </a></li>
-        <li><a href="./back-stop/">
+        <li><a href="./back-stop/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">back-stop/</span>
           <span class="desc">encrypted vault for account recovery codes</span>
         </a></li>
-        <li><a href="./security-assessment/">
+        <li><a href="./security-assessment/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">security-assessment/</span>
           <span class="desc">security framework maturity auditing</span>
         </a></li>
-        <li><a href="./cert-tool/">
+        <li><a href="./cert-tool/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">cert-tool/</span>
           <span class="desc">certificate tooling gui</span>
         </a></li>
-        <li><a href="./scrub-adub/">
+        <li><a href="./scrub-adub/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">scrub-adub/</span>
           <span class="desc">reversible pii redaction</span>
         </a></li>
-        <li><a href="./steg-lab/">
+        <li><a href="./steg-lab/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">steg-lab/</span>
           <span class="desc">encode/decode secrets in png images</span>
@@ -373,17 +377,17 @@
       <div class="line"><span class="prompt">~/games</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># games, very nerdy, mostly fun</p>
       <ul class="listing">
-        <li><a href="./thirteen-clauses/">
+        <li><a href="./thirteen-clauses/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">thirteen-clauses/</span>
           <span class="desc">text based rpg game about TOS arbitration</span>
         </a></li>
-        <li><a href="./ninefold-ctf/">
+        <li><a href="./ninefold-ctf/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">ninefold-ctf/</span>
           <span class="desc">nine compartments stand between you and the flag</span>
         </a></li>
-        <li><a href="./break-glass/">
+        <li><a href="./break-glass/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">break-glass/</span>
           <span class="desc">cyber incident response tabletop simulator</span>
@@ -396,12 +400,12 @@
       <div class="line"><span class="prompt">~/study</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># exam prep, notes, revision</p>
       <ul class="listing">
-        <li><a href="./mcq-portal/">
+        <li><a href="./mcq-portal/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">mcq-portal/</span>
           <span class="desc">offline MCQ flashcard player for exam prep</span>
         </a></li>
-        <li><a href="./markdown-portal/">
+        <li><a href="./markdown-portal/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">markdown-portal/</span>
           <span class="desc">read .md files in browser with custom theming</span>
@@ -414,12 +418,12 @@
       <div class="line"><span class="prompt">~/finance</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># money in, money out</p>
       <ul class="listing">
-        <li><a href="./finance-ledger/">
+        <li><a href="./finance-ledger/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">finance-ledger/</span>
           <span class="desc">personal household finance workbook</span>
         </a></li>
-        <li><a href="./budget-tracker/">
+        <li><a href="./budget-tracker/" target="_blank" rel="noopener noreferrer">
           <span class="perm">drwxr-xr-x</span>
           <span class="name">budget-tracker/</span>
           <span class="desc">simple budget tracker for projects</span>
@@ -432,17 +436,17 @@
       <div class="line"><span class="prompt">~/scripts</span> <span class="cmd">❯ ls -l</span></div>
       <p class="comment"># no click-ops here</p>
       <ul class="listing">
-        <li><a href="https://github.com/shanemc92/motd-stats" target="_blank" rel="noopener">
+        <li><a href="https://github.com/shanemc92/motd-stats" target="_blank" rel="noopener noreferrer">
           <span class="perm">lrwxrwxrwx</span>
           <span class="name">motd-stats/</span>
           <span class="desc">ssh login banner with live server stats</span>
         </a></li>
-        <li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener">
+        <li><a href="https://github.com/shanemc92/debian-harden" target="_blank" rel="noopener noreferrer">
           <span class="perm">lrwxrwxrwx</span>
           <span class="name">debian-harden/</span>
           <span class="desc">interactive hardening script for debian systems</span>
         </a></li>
-        <li><a href="https://github.com/shanemc92/powershell-automate" target="_blank" rel="noopener">
+        <li><a href="https://github.com/shanemc92/powershell-automate" target="_blank" rel="noopener noreferrer">
           <span class="perm">lrwxrwxrwx</span>
           <span class="name">powershell-automate/</span>
           <span class="desc">windows script scheduler platform</span>

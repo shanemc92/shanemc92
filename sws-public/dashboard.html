@@ -610,7 +610,8 @@
 
     var a = el('a');
     a.href = app.href;
-    if (app.external) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    a.target = '_blank';            // every tool opens in a new tab
+    a.rel = 'noopener noreferrer';
 
     var head = el('span', 'card-head');
     head.appendChild(el('span', 'name', app.id));
