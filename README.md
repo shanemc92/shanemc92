@@ -25,7 +25,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 
 <table>
 <tr><th width="220">Tool</th><th>What it does</th></tr>
-<tr><td>🗓️ <b><a href="https://github.com/shanemc92/TimePilot">TimePilot</a></b></td><td>Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users</td></tr>
+<tr><td>🗓️ <b><a href="https://github.com/shanemc92/time-pilot">time&#8209;pilot</a></b></td><td>Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users</td></tr>
 <tr><td>🔃 <b><a href="https://github.com/shanemc92/flow-state">flow&#8209;state</a></b></td><td>Build a process as a flowchart, get a runbook out of it, then follow it step by step when it matters. Plus a plain incident timeline for the days nothing goes to plan</td></tr>
 <tr><td>📋 <b><a href="https://github.com/shanemc92/change-manager">change&#8209;manager</a></b></td><td>In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results)</td></tr>
 <tr><td>🔔 <b><a href="https://github.com/shanemc92/ntfy-reminders">ntfy&#8209;reminders</a></b></td><td>Self-hosted notification scheduler for <a href="https://ntfy.sh">ntfy</a>, with one-time and recurring reminders dispatched via cron</td></tr>
