@@ -69,7 +69,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 
 <table>
 <tr><th width="220">Tool</th><th>What it does</th></tr>
-<tr><td>💰 <b><a href="https://github.com/shanemc92/finance-ledger">finance&#8209;ledger</a></b></td><td>Personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs.</td></tr>
+<tr><td>💰 <b><a href="https://github.com/shanemc92/penny-keeper">penny&#8209;keeper</a></b></td><td>Personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs.</td></tr>
 <tr><td>📊 <b><a href="https://github.com/shanemc92/budget-tracker">budget&#8209;tracker</a></b></td><td>Budget tracker for projects - plan what each line item should cost, log what it actually cost, see how far ahead or behind you are</td></tr>
 </table>
 
