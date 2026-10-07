@@ -4,6 +4,10 @@
 
 **IT & cybersecurity tools built to automate repetitive tasks and streamline daily workflows.**
 
+*These are privacy-first, so there are no analytics anywhere and I have no idea if anyone uses them. If you find one useful, I'd love to hear about it: [shane.00bc2@passmail.com](mailto:shane.00bc2@passmail.com)*
+
+*And if one has saved you some time and you feel like saying thanks, you can [buy me a coffee](https://buymeacoffee.com/01fsslj4kk) ☕ - entirely optional, never expected.*
+
 </div>
 
 Working in IT and cybersecurity, mostly hands-on with security operations, infrastructure, and automation. What's here is a combination of scripts and apps I've built along the way to cut down on manual work and keep my daily routine moving.
