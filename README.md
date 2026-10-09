@@ -38,6 +38,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <tr><td>🧭 <b><a href="https://github.com/shanemc92/way-point">way&#8209;point</a></b></td><td>Single-file, client-side holiday itinerary builder - build a trip day by day, save it as JSON, load it back to edit, and export a themed, script-free HTML page or Markdown file for printing</td></tr>
 <tr><td>⛩️ <b><a href="https://github.com/shanemc92/gate-remote">gate&#8209;remote</a></b></td><td>Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle</td></tr>
 <tr><td>🖼️ <b><a href="https://github.com/shanemc92/wall-craft">wall&#8209;craft</a></b></td><td>Single-file, client-side wallpaper maker - crop an image to a ratio or build a collage from several, then export at an exact screen resolution. Content-aware fill for empty bars and a spot heal brush; images never leave your browser</td></tr>
+<tr><td>🏋️ <b><a href="https://github.com/shanemc92/rep-step">rep&#8209;step</a></b></td><td>Single-file, client-side workout planner - build a workout as a comic strip of stick figures from a library of 108 exercises, pose each figure by dragging its joints, and print it to PDF for the wall</td></tr>
 </table>
 
 ## 🛡️ Security
