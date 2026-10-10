@@ -30,10 +30,8 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <table>
 <tr><th width="220">Tool</th><th>What it does</th></tr>
 <tr><td>🗓️ <b><a href="https://github.com/shanemc92/time-pilot">time&#8209;pilot</a></b></td><td>Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users</td></tr>
-<tr><td>🔃 <b><a href="https://github.com/shanemc92/flow-state">flow&#8209;state</a></b></td><td>Build a process as a flowchart, get a runbook out of it, then follow it step by step when it matters. Plus a plain incident timeline for the days nothing goes to plan</td></tr>
 <tr><td>📋 <b><a href="https://github.com/shanemc92/change-manager">change&#8209;manager</a></b></td><td>In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results)</td></tr>
 <tr><td>🔔 <b><a href="https://github.com/shanemc92/ntfy-reminders">ntfy&#8209;reminders</a></b></td><td>Self-hosted notification scheduler for <a href="https://ntfy.sh">ntfy</a>, with one-time and recurring reminders dispatched via cron</td></tr>
-<tr><td>☕ <b><a href="https://github.com/shanemc92/cyber-barista">cyber&#8209;barista</a></b></td><td>Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions</td></tr>
 <tr><td>🗃️ <b><a href="https://github.com/shanemc92/data-wrangler">data&#8209;wrangler</a></b></td><td>Paste or drop CSV, TSV, any delimiter, fixed width columns, JSON or JSON lines, Markdown tables or key=value log lines, run them through a list of steps, and export</td></tr>
 <tr><td>🧭 <b><a href="https://github.com/shanemc92/way-point">way&#8209;point</a></b></td><td>Single-file, client-side holiday itinerary builder - build a trip day by day, save it as JSON, load it back to edit, and export a themed, script-free HTML page or Markdown file for printing</td></tr>
 <tr><td>⛩️ <b><a href="https://github.com/shanemc92/gate-remote">gate&#8209;remote</a></b></td><td>Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle</td></tr>
@@ -51,6 +49,8 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <tr><td>🔐 <b><a href="https://github.com/shanemc92/cert-tool">cert&#8209;tool</a></b></td><td>Single-file certificate/key toolkit, fully client-side, no server or dependencies</td></tr>
 <tr><td>🧽 <b><a href="https://github.com/shanemc92/scrub-adub">scrub&#8209;adub</a></b></td><td>Reversible PII redaction that runs entirely client-side - strip PII/secrets before pasting into an LLM, then decode the response back to real values</td></tr>
 <tr><td>🖼️ <b><a href="https://github.com/shanemc92/steg-lab">steg&#8209;lab</a></b></td><td>Tool to hide a message in the pixels of a PNG image. You can share the image and the recipient can use the decode tab to pull the message back out.</td></tr>
+<tr><td>☕ <b><a href="https://github.com/shanemc92/cyber-barista">cyber&#8209;barista</a></b></td><td>Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions</td></tr>
+<tr><td>🔃 <b><a href="https://github.com/shanemc92/flow-state">flow&#8209;state</a></b></td><td>Build a process as a flowchart, get a runbook out of it, then follow it step by step when it matters. Plus a plain incident timeline for the days nothing goes to plan</td></tr>
 </table>
 
 ## 🎮 Games

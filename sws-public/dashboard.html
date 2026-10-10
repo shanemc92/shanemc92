@@ -420,18 +420,10 @@
   ];
 
   var APPS = [
-    { id: 'flow-state', group: 'tools', href: './flow-state/',
-      what: 'Draw a process as a flowchart, get a runbook out of it, then follow it step by step. Includes a plain incident timeline.',
-      when: 'writing up a procedure or working a live incident',
-      tags: 'runbook flowchart process incident timeline procedure' },
     { id: 'change-manager', group: 'tools', href: './change-manager/',
       what: 'Build and reuse change request templates: reason, steps, test plan, risks, backout plan and expected results.',
       when: 'raising a CR and you don\'t want to start from blank',
       tags: 'change request cr template itil risk backout test plan' },
-    { id: 'cyber-barista', group: 'tools', href: './cyber-barista/',
-      what: 'Chain encode and decode steps into a recipe, with basic encryption functions. Save, export and import recipes.',
-      when: 'a log or email has an encoded blob you need to read',
-      tags: 'encode decode base64 hex url cyberchef recipe encryption' },
     { id: 'data-wrangler', group: 'tools', href: './data-wrangler/',
       what: 'Paste or drop CSV, TSV, fixed-width, JSON, JSON lines, Markdown tables or key=value logs, run steps over them, export.',
       when: 'an export or log dump needs to become a usable table',
@@ -481,6 +473,14 @@
       what: 'Hide a message in the pixels of a PNG, share the image, and pull the message back out on the decode tab.',
       when: 'teaching or demoing steganography',
       tags: 'steganography png image hide message lsb' },
+    { id: 'cyber-barista', group: 'security', href: './cyber-barista/',
+      what: 'Chain encode and decode steps into a recipe, with basic encryption functions. Save, export and import recipes.',
+      when: 'a log or email has an encoded blob you need to read',
+      tags: 'encode decode base64 hex url cyberchef recipe encryption' },
+    { id: 'flow-state', group: 'security', href: './flow-state/',
+      what: 'Draw a process as a flowchart, get a runbook out of it, then follow it step by step. Includes a plain incident timeline.',
+      when: 'writing up a procedure or working a live incident',
+      tags: 'runbook flowchart process incident timeline procedure' },
 
     { id: 'penny-keeper', group: 'finance', href: './penny-keeper/',
       what: 'Household finance app: budgets, loan amortisation, statement vs budget, savings projections and bill history.',
