@@ -30,13 +30,13 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <table>
 <tr><th width="220">Tool</th><th>What it does</th></tr>
 <tr><td>🗓️ <b><a href="https://github.com/shanemc92/time-pilot">time&#8209;pilot</a></b></td><td>Self-hosted task board, day planner, single timer, and timesheet exporter for multiple users</td></tr>
-<tr><td>📋 <b><a href="https://github.com/shanemc92/change-manager">change&#8209;manager</a></b></td><td>In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results)</td></tr>
-<tr><td>🔔 <b><a href="https://github.com/shanemc92/ntfy-reminders">ntfy&#8209;reminders</a></b></td><td>Self-hosted notification scheduler for <a href="https://ntfy.sh">ntfy</a>, with one-time and recurring reminders dispatched via cron</td></tr>
-<tr><td>🗃️ <b><a href="https://github.com/shanemc92/data-wrangler">data&#8209;wrangler</a></b></td><td>Paste or drop CSV, TSV, any delimiter, fixed width columns, JSON or JSON lines, Markdown tables or key=value log lines, run them through a list of steps, and export</td></tr>
 <tr><td>🧭 <b><a href="https://github.com/shanemc92/way-point">way&#8209;point</a></b></td><td>Single-file, client-side holiday itinerary builder - build a trip day by day, save it as JSON, load it back to edit, and export a themed, script-free HTML page or Markdown file for printing</td></tr>
-<tr><td>⛩️ <b><a href="https://github.com/shanemc92/gate-remote">gate&#8209;remote</a></b></td><td>Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle</td></tr>
-<tr><td>🖼️ <b><a href="https://github.com/shanemc92/wall-craft">wall&#8209;craft</a></b></td><td>Single-file, client-side wallpaper maker - crop an image to a ratio or build a collage from several, then export at an exact screen resolution. Content-aware fill for empty bars and a spot heal brush; images never leave your browser</td></tr>
 <tr><td>🏋️ <b><a href="https://github.com/shanemc92/rep-step">rep&#8209;step</a></b></td><td>Single-file, client-side workout planner - build a workout as a comic strip of stick figures from a library of 183 exercises, pose each figure by dragging its joints, and print it to PDF for the wall</td></tr>
+<tr><td>🖼️ <b><a href="https://github.com/shanemc92/wall-craft">wall&#8209;craft</a></b></td><td>Single-file, client-side wallpaper maker - crop an image to a ratio or build a collage from several, then export at an exact screen resolution. Content-aware fill for empty bars and a spot heal brush; images never leave your browser</td></tr>
+<tr><td>📋 <b><a href="https://github.com/shanemc92/change-manager">change&#8209;manager</a></b></td><td>In-browser tool for building and reusing IT change request templates (reason, steps, test plan, risks, backup plan, expected results)</td></tr>
+<tr><td>🗃️ <b><a href="https://github.com/shanemc92/data-wrangler">data&#8209;wrangler</a></b></td><td>Paste or drop CSV, TSV, any delimiter, fixed width columns, JSON or JSON lines, Markdown tables or key=value log lines, run them through a list of steps, and export</td></tr>
+<tr><td>🔔 <b><a href="https://github.com/shanemc92/ntfy-reminders">ntfy&#8209;reminders</a></b></td><td>Self-hosted notification scheduler for <a href="https://ntfy.sh">ntfy</a>, with one-time and recurring reminders dispatched via cron</td></tr>
+<tr><td>⛩️ <b><a href="https://github.com/shanemc92/gate-remote">gate&#8209;remote</a></b></td><td>Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle</td></tr>
 </table>
 
 ## 🛡️ Security
@@ -44,30 +44,21 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <table>
 <tr><th width="220">Tool</th><th>What it does</th></tr>
 <tr><td>🔑 <b><a href="https://github.com/shanemc92/password-generator">password&#8209;generator</a></b></td><td>Client-side password generator with theming and secure one-time sharing via scrt.link</td></tr>
+<tr><td>🔃 <b><a href="https://github.com/shanemc92/flow-state">flow&#8209;state</a></b></td><td>Build a process as a flowchart, get a runbook out of it, then follow it step by step when it matters. Plus a plain incident timeline for the days nothing goes to plan</td></tr>
 <tr><td>🗝️ <b><a href="https://github.com/shanemc92/back-stop">back&#8209;stop</a></b></td><td>Single-file browser vault for account recovery codes - AES-256-GCM under a PBKDF2 passphrase, exports an encrypted file, and prints a plain code sheet, an encrypted QR backup and a break-glass key card. Offline Python recovery script included</td></tr>
 <tr><td>🛡️ <b><a href="https://github.com/shanemc92/security-assessment">security&#8209;assessment</a></b></td><td>Static HTML toolkit for running security maturity assessments (NIST CSF / CIS) and generating a client-ready report - no backend required</td></tr>
+<tr><td>☕ <b><a href="https://github.com/shanemc92/cyber-barista">cyber&#8209;barista</a></b></td><td>Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions</td></tr>
 <tr><td>🔐 <b><a href="https://github.com/shanemc92/cert-tool">cert&#8209;tool</a></b></td><td>Single-file certificate/key toolkit, fully client-side, no server or dependencies</td></tr>
 <tr><td>🧽 <b><a href="https://github.com/shanemc92/scrub-adub">scrub&#8209;adub</a></b></td><td>Reversible PII redaction that runs entirely client-side - strip PII/secrets before pasting into an LLM, then decode the response back to real values</td></tr>
 <tr><td>🕵️ <b><a href="https://github.com/shanemc92/steg-lab">steg&#8209;lab</a></b></td><td>Tool to hide a message in the pixels of a PNG image. You can share the image and the recipient can use the decode tab to pull the message back out.</td></tr>
-<tr><td>☕ <b><a href="https://github.com/shanemc92/cyber-barista">cyber&#8209;barista</a></b></td><td>Minimal client-side text encoding/decoding tool, zero dependencies - build recipes, export/import them, basic encryption functions</td></tr>
-<tr><td>🔃 <b><a href="https://github.com/shanemc92/flow-state">flow&#8209;state</a></b></td><td>Build a process as a flowchart, get a runbook out of it, then follow it step by step when it matters. Plus a plain incident timeline for the days nothing goes to plan</td></tr>
-</table>
-
-## 🎮 Games
-
-<table>
-<tr><th width="220">Game</th><th>What it does</th></tr>
-<tr><td>⚖️ <b><a href="https://github.com/shanemc92/thirteen-clauses">thirteen&#8209;clauses</a></b></td><td>A text-based dungeon crawler about binding arbitration. Thirteen floors, a clause for every one. Plays in a terminal or in a browser - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab.</td></tr>
-<tr><td>🚩 <b><a href="https://github.com/shanemc92/ninefold-ctf">ninefold&#8209;ctf</a></b></td><td>Nine compartments stand between you and the flag. Each one is a different physical trick - nothing is explained up front, and nothing about how a compartment works is visible in the page source until you've opened it.</td></tr>
-<tr><td>🚨 <b><a href="https://github.com/shanemc92/break-glass">break&#8209;glass</a></b></td><td>A cyber incident response tabletop simulator. You're the lead responder - choose the right actions to resolve the incident while minimising damage.</td></tr>
 </table>
 
 ## 📚 Study tooling
 
 <table>
 <tr><th width="220">Tool</th><th>What it does</th></tr>
-<tr><td>🗂️ <b><a href="https://github.com/shanemc92/mcq-portal">mcq&#8209;portal</a></b></td><td>Offline MCQ flashcard player for exam prep - load your own question banks in JSON, shuffle questions and answer order, track scores per attempt, flag weak topics for review, and revise without needing a network connection or an app store</td></tr>
 <tr><td>📖 <b><a href="https://github.com/shanemc92/markdown-portal">markdown&#8209;portal</a></b></td><td>Single-file Markdown viewer with custom theming, collapsible sidebar navigation, full-text search across all loaded notes, syntax-highlighted code blocks and table rendering, so revision notes and study guides stay usable and readable fully offline</td></tr>
+<tr><td>🗂️ <b><a href="https://github.com/shanemc92/mcq-portal">mcq&#8209;portal</a></b></td><td>Offline MCQ flashcard player for exam prep - load your own question banks in JSON, shuffle questions and answer order, track scores per attempt, flag weak topics for review, and revise without needing a network connection or an app store</td></tr>
 </table>
 
 ## 💰 Finance
@@ -76,6 +67,15 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <tr><th width="220">Tool</th><th>What it does</th></tr>
 <tr><td>💰 <b><a href="https://github.com/shanemc92/penny-keeper">penny&#8209;keeper</a></b></td><td>Personal finance workbook that runs entirely in your browser. Budgeting, loan amortisation, bank statement vs budget tracking, savings projections, maternity calculator electricity cost comparison and historical bill logs.</td></tr>
 <tr><td>📊 <b><a href="https://github.com/shanemc92/budget-tracker">budget&#8209;tracker</a></b></td><td>Budget tracker for projects - plan what each line item should cost, log what it actually cost, see how far ahead or behind you are</td></tr>
+</table>
+
+## 🎮 Games
+
+<table>
+<tr><th width="220">Game</th><th>What it does</th></tr>
+<tr><td>🚨 <b><a href="https://github.com/shanemc92/break-glass">break&#8209;glass</a></b></td><td>A cyber incident response tabletop simulator. You're the lead responder - choose the right actions to resolve the incident while minimising damage.</td></tr>
+<tr><td>⚖️ <b><a href="https://github.com/shanemc92/thirteen-clauses">thirteen&#8209;clauses</a></b></td><td>A text-based dungeon crawler about binding arbitration. Thirteen floors, a clause for every one. Plays in a terminal or in a browser - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab.</td></tr>
+<tr><td>🚩 <b><a href="https://github.com/shanemc92/ninefold-ctf">ninefold&#8209;ctf</a></b></td><td>Nine compartments stand between you and the flag. Each one is a different physical trick - nothing is explained up front, and nothing about how a compartment works is visible in the page source until you've opened it.</td></tr>
 </table>
 
 ## 🖥️ Server scripts
