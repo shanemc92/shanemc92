@@ -2,7 +2,7 @@
 
 # 🛠️ Shane's Toolbox
 
-**IT & cybersecurity tools built to automate repetitive tasks and streamline daily workflows.**
+**IT, cybersecurity and finance tools built to automate repetitive tasks and streamline daily workflows.**
 
 *These are privacy-first, so there are no analytics anywhere and I have no idea if anyone uses them. If you find one useful, I'd love to hear about it: [shane.00bc2@passmail.com](mailto:shane.00bc2@passmail.com)*
 
@@ -99,7 +99,7 @@ Live demos of most of these apps are available at **[sws.gltch.pro](https://sws.
 
 ## 🐛 Feedback
 
-Found a bug or have a feature idea? Open an issue on the relevant repo's Issues tab.
+Found a bug or have a feature idea? Open an issue on the relevant repo's Issues tab, or email me at [shane.00bc2@passmail.com](mailto:shane.00bc2@passmail.com).
 
 ## ☕ Support
 
