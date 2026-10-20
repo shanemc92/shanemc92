@@ -39,6 +39,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <tr><td>🔔 <b><a href="https://github.com/shanemc92/ntfy-reminders">ntfy&#8209;reminders</a></b></td><td>Self-hosted notification scheduler for <a href="https://ntfy.sh">ntfy</a>, with one-time and recurring reminders dispatched via cron</td></tr>
 <tr><td>⛩️ <b><a href="https://github.com/shanemc92/gate-remote">gate&#8209;remote</a></b></td><td>Flask app that triggers a Raspberry Pi GPIO relay to toggle a physical gate remote - daily schedule, optional RTSP camera view, ntfy push on each toggle</td></tr>
 <tr><td>⌨️ <b><a href="https://github.com/shanemc92/ahk-forge">ahk&#8209;forge</a></b></td><td>Single-file, client-side AutoHotkey v2 script builder - build hotkeys, hotstrings and startup actions from forms, with the official docs help for every parameter, a searchable reference, and a script that updates as you type; nothing leaves your browser</td></tr>
+<tr><td>📝 <b><a href="https://github.com/shanemc92/notepad--">notepad&#8209;&#8209;</a></b></td><td>Single-file, client-side notepad and code editor that installs as an app - tabs, syntax highlighting, a Markdown editor with live preview, a regex lab, diff and split view, and a pile of text transforms; notes stay in your browser unless you choose to share one</td></tr>
 </table>
 
 ## 🛡️ Security
