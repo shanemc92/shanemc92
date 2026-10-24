@@ -79,7 +79,7 @@ Working in IT and cybersecurity, mostly hands-on with security operations, infra
 <tr><td>🚨 <b><a href="https://github.com/shanemc92/break-glass">break&#8209;glass</a></b></td><td>A cyber incident response tabletop simulator. You're the lead responder - choose the right actions to resolve the incident while minimising damage.</td></tr>
 <tr><td>⚖️ <b><a href="https://github.com/shanemc92/thirteen-clauses">thirteen&#8209;clauses</a></b></td><td>A text-based dungeon crawler about binding arbitration. Thirteen floors, a clause for every one. Plays in a terminal or in a browser - the browser version runs the same Python as the terminal version, compiled to WebAssembly, entirely in your tab.</td></tr>
 <tr><td>🚩 <b><a href="https://github.com/shanemc92/ninefold-ctf">ninefold&#8209;ctf</a></b></td><td>Nine compartments stand between you and the flag. Each one is a different physical trick - nothing is explained up front, and nothing about how a compartment works is visible in the page source until you've opened it.</td></tr>
-<tr><td>🕹️ <b><a href="https://github.com/shanemc92/gltch-arcade">gltch&#8209;arcade</a></b></td><td>A neon, 80s-style arcade cabinet in a single HTML file - 55 games, puzzles, toys and oracles with CRT fuzz and synthesised sound, a shareable link for each one, and nothing sent anywhere; it works offline</td></tr>
+<tr><td>🕹️ <b><a href="https://github.com/shanemc92/gltch-arcade">gltch&#8209;arcade</a></b></td><td>A neon, 80s-style arcade cabinet in a single HTML file - 58 games, puzzles, toys and oracles with CRT fuzz and synthesised sound, a shareable link for each one, and nothing sent anywhere; it works offline</td></tr>
 </table>
 
 ## 🖥️ Server scripts
